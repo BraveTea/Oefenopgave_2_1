@@ -2,8 +2,8 @@
 float rectWdth =  200;
 float rectHght = rectWdth / 2;
 
-
 int lineCol = #00FF00; 
+
 
 void setup() {
   size(500, 500);
@@ -11,13 +11,17 @@ void setup() {
 
 void draw() {
   drawCrossedFlag(100,75);
+  drawCrossedFlag(200,200);
 }
+
 
 void drawCrossedFlag(float rectX, float rectY){
   drawRect(rectX,rectY);
   horLine(rectX,rectY);
   verLine(rectX,rectY);
+  // of course I could also add parameters for the colours used in the flags
 }
+
 void drawRect(float rectX, float rectY) {
   stroke(0);
   rect(rectX, rectY, rectWdth, rectHght);
@@ -40,5 +44,3 @@ void verLine(float rectX, float rectY) {
   float lineEndY = (lineStrtY + rectHght)-2;
   line(lineStrtX, lineStrtY, lineEndX, lineEndY);
 }
-
-
