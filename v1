@@ -1,0 +1,41 @@
+
+float rectWdth =  200;
+float rectHght = rectWdth / 2;
+float rectX = 50;
+float rectY = 50;
+
+
+int lineCol = #00FF00; 
+
+void setup() {
+  size(500, 500);
+}
+
+void draw() {
+  drawRect();
+  horLine();
+  verLine();
+}
+
+void drawRect() {
+  stroke(#000000);
+  rect(rectX, rectY, rectWdth, rectHght);
+}
+
+void horLine() {
+  stroke(lineCol);
+  float lineStrtX = rectX + 1;
+  float lineStrtY = rectY +  (rectHght/2);
+  float lineEndX = (lineStrtX + rectWdth)-2;
+  float lineEndY = lineStrtY;
+  line(lineStrtX, lineStrtY, lineEndX, lineEndY);
+}
+
+void verLine() {
+  stroke(lineCol);
+  float lineStrtX = rectX + (rectWdth/2);
+  float lineStrtY = rectY+1;
+  float lineEndX = lineStrtX;
+  float lineEndY = (lineStrtY + rectHght)-2;
+  line(lineStrtX, lineStrtY, lineEndX, lineEndY);
+}
